@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order_id: 1
+  asin: MyString
+  date: 2013-09-21
+  user_id: 
+
+two:
+  order_id: 1
+  asin: MyString
+  date: 2013-09-21
+  user_id: 

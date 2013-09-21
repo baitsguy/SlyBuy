@@ -37,8 +37,30 @@ class IndexController < ApplicationController
 		end
 		
 		def confirmation
-				@order_id = params[:id]
-				@date = "12:30pm September 20, 2013"
-				@status = "Delivering"
+				Zinc.api_key = "dev-fb112aad06264b67a535823768971a22" # set the API key first
+
+				new_order = Zinc::Order.create({:mode => 'dev', :address => {
+				    	:name => params[:name],
+				    	:address_line1 => params[:address],
+				    	:zip_code => params[:zip],
+				    	:city => params[:city],
+				    	:state => params[:state],
+				    	:country => params[:country]
+					},
+					:products => [
+				    {
+				        :pid => params[:pid],
+				        :pid_type => "ASIN",
+				    }
+				], :merchant => 'amazon', :shipping_method => 'standard'})
+
+				  # all parameters returned by the {Zinc API}[https://zinc.io/docs] can be used as accessors
+				  # puts new_order.ship_date_estimate # => 1336120454
+
+
+				@order_id = new_order[:id]
+				@date = new_order[:delivery_date_estimate]
+				@status = new_order.status["message"]
+				@ASIN = new_order.products.first["pid"]
 		end
 end

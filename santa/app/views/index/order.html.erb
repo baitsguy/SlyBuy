@@ -1,0 +1,16 @@
+<% if @success %>
+		Woooo found an order!!!!
+You buy?s
+<% else %>
+		Could no find order :((( 
+<% end %>
+<br/>
+<b>Found you something for between </b>$<%= Integer(@price)-10 %> and $<%= @price %>
+<br/>
+<br/>
+<%= @query %><br/><br/>
+<b><%= @name %><br/></b>
+<%= @value %><br/>
+<%= @cost %><br/>
+<img src="<%= @image %>"/>
+

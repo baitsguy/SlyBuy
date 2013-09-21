@@ -3,10 +3,10 @@ Santa::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'index#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'confirmation/:id' => 'index#confirmation'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -53,4 +53,7 @@ Santa::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+		unless Rails.application.config.consider_all_requests_local
+				match '*not_found', to: 'errors#error_404'
+		end
 end

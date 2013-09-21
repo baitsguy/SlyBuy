@@ -3,11 +3,11 @@
 one:
   order_id: 1
   asin: MyString
-  date: 2013-09-21
-  user_id: 
+  date: 1
+  User_id: 
 
 two:
   order_id: 1
   asin: MyString
-  date: 2013-09-21
-  user_id: 
+  date: 1
+  User_id: 

@@ -57,6 +57,7 @@ class IndexController < ApplicationController
 				  # all parameters returned by the {Zinc API}[https://zinc.io/docs] can be used as accessors
 				  # puts new_order.ship_date_estimate # => 1336120454
 
+				if User.find_by email: ''
 
 				@order_id = new_order[:id]
 				@date = new_order[:delivery_date_estimate]

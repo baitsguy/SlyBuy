@@ -1,16 +1,72 @@
-<% if @success %>
-		Woooo found an order!!!!
-You buy?s
+<div class="logo"><img src="assets/logo.png"></div>
+<div class="content">
+		<% if @failed %>
+				Due to slow performance either by us, reddit, or amazon, this request timed out. Please go back and try again.
 <% else %>
-		Could no find order :((( 
-<% end %>
-<br/>
-<b>Found you something for between </b>$<%= Integer(@price)-10 %> and $<%= @price %>
-<br/>
-<br/>
-<%= @query %><br/><br/>
-<b><%= @name %><br/></b>
-<%= @value %><br/>
-<%= @cost %><br/>
-<img src="<%= @image %>"/>
+		<h2>Woot! We found a product that matched your price range! </h2>
+		<p>Please fill out your shipping information below and choose your payment option. </p>
+		<p>p.s. Santa Claus says thanks for giving him a day off.</p>
+		<br/>
+		<br/>
+		<%= @query %><br/><br/>
+		<b><%= @name %><br/></b>
+		<%= @item %><br/>
+		<%= @cost %><br/>
+		<img src="<%= @image %>"/>
+				<br/>
+				<a href="/confirmation">Buy dis shizzzzzz</a><br/>
 
+<form class="pretty_form" action="/confirmation" method="post" style="z-index: 99" >
+												<ul style ="list-style-type: none;">
+														<li>
+														  <label for="name">Full Name:</label><br/>
+																  <input type="text" name="name" />
+														</li>
+														
+														   <li>
+																 <label for="email">Email:</label><br/>
+																 <input type="text" name="email" />
+														   </li>
+														   
+														  <li>
+																 <label for="address1">Address line 1:</label><br/>
+																 <input type="text" name="address1" />
+																	</li>
+
+														  <li>
+																 <label for="address2">Address line 2:</label><br/>
+																 <input type="text" name="address2" />
+														  </li>
+														  <div>
+														   <li>
+																 <label for="city">City:</label><br/>
+																 <input type="text" name="city" />
+														  </li>
+														  
+														   <li>
+																 <label for="state">State:</label><br/>
+																 <input type="text" name="state" />
+														  </li>
+														  
+														  
+														  <li>
+																 <label for="zip">Zip Code:</label><br/>
+																 <input type="text" name="zip" />
+														  </li>
+														 
+														  
+														  <li>
+																 <label for="country">Country:</label><br/>
+																 <input type="text" name="country" />
+														  </li>
+														   </div>
+														   
+														  <li>
+																 <button class="submit venmo" type="submit">Pay via Venmo</button>
+												 </li>
+												 
+														</ul>
+												</form>
+
+										</div>
+<% end %>

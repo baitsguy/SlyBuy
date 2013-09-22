@@ -1,7 +1,5 @@
- <div id="slides">
-   <div class="slides-container">
 					
-					<div id= "home" class = "container">
+					<div id= "home">
 							
 							<img src="assets/logo_white.png" class="preserve large">
 							<div class="text-holder">
@@ -10,8 +8,8 @@
 										</p>
 						 </div>
 							<div class="button-holder">
-										<a href="#charity"><div class="button">Charity</div></a>
 										<a href="#friends"><div class="button">Friends</div></a>
+										<a href="#charity"><div class="button">Charity</div></a>
 								</div>
 								<div id="footer">
 										A result of MHacks 2013. <a href="https://github.com/vinayakthapliyal/SlyBuy" target="blank">GitHub</a>
@@ -19,7 +17,7 @@
 					
 					</div>
 
-					<div id= "friends" class = "container">
+					<div id= "friends">
 
 								<div class="logo">
 										<img src="assets/logo.png" class="preserve" width="150px">
@@ -49,7 +47,7 @@
 										<a href="#home" class="home_button">Home</a>
      </div>
 
-   		<div id= "charity" class = "container">
+   		<div id= "charity">
 							
 							<div class="logo">
 										<img src="assets/logo.png" class="preserve" width="150px">
@@ -58,13 +56,10 @@
 										<p>
 												Why can't you have fun and do good? Make a donation to the charity of your choice and we'll make sure they get presents from their wishlists.
 										</p>
-						 </div>
-							<div class="button-holder">
-									<a href="#charity"><div class="button">List</div></a></a>
-									<a href="#charity"><div class="button">Register</div></a></a>
-						 </div>
+								</div>
+								<%= render partial: "charity_list" %>
+								<br/><br/>
+								<p style="text-align:center">Are you representing a charity and want to sign up? <a href="/charity/new">Register here!</a></p>
 										<a href="#home" class="home_button">Home</a>
 				</div>
- </div>
-
  	 

@@ -51,6 +51,7 @@ class IndexController < ApplicationController
 						#raise session.inspect + session["asin"] + session["zinc_input"].inspect + session["name"].inspect #+ zinc_input
 						#raise session[:zinc_input].inspect
 						new_order = Zinc::Order.create(zinc_input)
+						raise new_order.inspect
 						@order_id = new_order[:id]
 						@date = new_order[:delivery_date_estimate]
 						@status = new_order.status["message"]

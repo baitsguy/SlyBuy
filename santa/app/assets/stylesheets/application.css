@@ -59,6 +59,9 @@ img.large {
 		margin-top:10%;
 		width:70%;
 }
+ul {
+		padding:0;
+}
 .content {
 		margin-left:50px;
 }
@@ -77,12 +80,10 @@ img.large {
 		font-size:1.5em;
 		margin-right:auto;
 		margin-left:auto;
-		text-align:center;
 		width:40%;
 }
 .long {
 		text-align:left;
-		margin-left:30px;
 		width:100%;
 }
 .button{
@@ -112,39 +113,60 @@ button.submit.venmo {
 		background-color:#00B2EE;
 		font-size:1.5em;
 }
-.logo {
-		margin:30px;
-}
 .logo img {
 		width:40%;
 }
 a.home_button {
 		border:none;
-		bottom:5px;
 		clear:both;
 		color:white;
 		display:block;
 		font-size:1.5em;
 		height:40px;
-		margin-left:40px;
 		padding:2px;
-		position:absolute;
+		position:relative;
 		text-decoration:none;
+		top:200px;
 		width:100px;
 }
 a.home_button:hover {
 		text-decoration:underline;
 }
+.list-item a {
+		background-color:white;
+		color:#333;
+		display:block;
+		margin-right:auto;
+		margin-left:auto;
+		margin-bottom:8px;
+		padding:10px;
+		text-align:center;
+		text-decoration:none;
+		width:300px;
+}
+.list-item a:hover {
+		background-color:#eee;
+}
+#lightbox {
+		background:white;
+		display:none;
+		height:60%;
+		position:absolute;
+		margin-right:auto;
+		margin-left:auto;
+		top:100px;
+		width:70%;
+}
 #home{
 		background:#00C78C;
 }
-
 #friends{
 	background: #63D1F4;
+		padding-left:50px;
 }
-
 #charity{
-		background: #95a2a5; 
+		background: #95a2a5;
+		padding-left:50px;
 }
 #footer {
 		clear:both;

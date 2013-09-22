@@ -1,4 +1,4 @@
-<div class="logo"><img src="assets/logo.png"></div>
+<div class="logo" style="margin-left:50px"><img src="assets/logo.png"></div>
 <div class="content">
 		<% if @failed %>
 				Due to slow performance either by us, reddit, or amazon, this request timed out. Please go back and try again.
@@ -15,10 +15,10 @@
 		<img src="<%= @image %>"/>
 				<br/>
 				<a href="/confirmation">Buy dis shizzzzzz</a><br/>
+				<ul style ="list-style-type: none;">
+						<%= form_tag('/confirmation', method: :get, :class => 'pretty_form') %>
 
-<form class="pretty_form" action="/confirmation" method="post" style="z-index: 99" >
-												<ul style ="list-style-type: none;">
-														<li>
+																<li>
 														  <label for="name">Full Name:</label><br/>
 																  <input type="text" name="name" />
 														</li>
@@ -33,10 +33,6 @@
 																 <input type="text" name="address1" />
 																	</li>
 
-														  <li>
-																 <label for="address2">Address line 2:</label><br/>
-																 <input type="text" name="address2" />
-														  </li>
 														  <div>
 														   <li>
 																 <label for="city">City:</label><br/>

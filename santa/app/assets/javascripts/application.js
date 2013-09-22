@@ -15,31 +15,16 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
-	letsMove();
+		$('#home').height(1000);
+		$('#friends').height(1000);
+		$('#charity').height(1000);
+		$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    return false;
+		});
+  $('html,body').animate({scrollTop: $('#home').offset().top},'slow');
 
-		$('.friends').on('click',function(){
-		$('#slides').superslides('animate','next');
-				
-		});
-		$('.charity').on('click',function(){
-				$('#slides').superslides('animate','prev');
-		});	
-		
-		$('.fpb').on('click',function(){
-				$('.fpb').css('display','none');
-		});
-
-		$('.slides-pagination').remove();
-		
-		
-		function letsMove(){
-		$('#slides').superslides({
-						slide_speed: 800,
-						pagination: true,
-						hashchange: true,
-						scrollable: true
-		});
-		};
-		
 });
 

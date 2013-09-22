@@ -1,20 +1,18 @@
 <% Charity.all.each do |charity| %>
 		<div class="list-item">
-				<a href="#"><%=  charity.name %></a>
+				<a href="#" id="<%= charity.id %>"><%=  charity.name %></a>
 		</div>
 <% end %>
 		<div class="list-item">
 				<a href="#charity" id="1" class="charity">Mott's Children Hospital</a>
 		</div>
-		<div class="list-item">
-				<a href="#charity">Mott's Children Hospital</a>
-		</div>
 
 		<div id="lightbox">
-				<%= form_tag('/confirmation', method: :get, :class => 'pretty_form') %>
-				 <label>Amount</label>
-					<input type="text" name="amount">
-					<label>Email</label>
-					<input type="text" name="email">
+				<%= form_tag('charity/confirmation', method: :get, :class => 'pretty_form', :id => 'charity_form') %>
+				<label>Amount $</label><br/>
+				<input type="text" name="amount"><br/>
+				<label>Email</label><br/>
+				<input type="text" name="email"><br/>
+				<button class="submit">Pay with Venmo</button>
 				</form>
 		</div>

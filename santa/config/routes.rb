@@ -7,6 +7,8 @@ Santa::Application.routes.draw do
   root 'index#index'
 
   # Example of regular route:
+		get 'charity/confirmation' => 'charity#confirmation'
+		get 'charity/newdonation' => 'charity#new_donation'
   post 'confirmation' => 'index#confirmation'
   get 'confirmation' => 'index#confirmation'
   get 'confirmation/:id' => 'index#confirmation'

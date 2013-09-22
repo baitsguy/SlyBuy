@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  money: 1
+  User_id: 
+  Charity_id: 
+
+two:
+  money: 1
+  User_id: 
+  Charity_id: 

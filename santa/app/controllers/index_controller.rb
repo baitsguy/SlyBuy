@@ -48,7 +48,6 @@ class IndexController < ApplicationController
 		
 		def confirmation
 				Zinc.api_key = "dev-fb112aad06264b67a535823768971a22" # set the API key first
-
 				if(params[:access_token]) #redirected from venmo
 						new_order = Zinc::Order.create(session[:zinc_input])
 						@order_id = new_order[:id]
@@ -76,7 +75,7 @@ class IndexController < ApplicationController
 										:zip_code => params[:zip],
 										:city => params[:city],
 										:state => params[:state],
-										:country => params[:country]
+										:country => "US"
 								},
 								:products => [
 								{
@@ -90,5 +89,6 @@ class IndexController < ApplicationController
 						redirect_to "https://api.venmo.com/oauth/authorize?client_id=1396&scope=ACCESS_FRIENDS,ACCESS_PROFILE,MAKE_PAYMENTS"
 				end
 
+				raise session[:zinc_input]
 		end
 end

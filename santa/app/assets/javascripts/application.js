@@ -14,3 +14,32 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+	letsMove();
+
+		$('.friends').on('click',function(){
+		$('#slides').superslides('animate','next');
+				
+		});
+		$('.charity').on('click',function(){
+				$('#slides').superslides('animate','prev');
+		});	
+		
+		$('.fpb').on('click',function(){
+				$('.fpb').css('display','none');
+		});
+
+		$('.slides-pagination').remove();
+		
+		
+		function letsMove(){
+		$('#slides').superslides({
+						slide_speed: 800,
+						pagination: true,
+						hashchange: true,
+						scrollable: true
+		});
+		};
+		
+});
+

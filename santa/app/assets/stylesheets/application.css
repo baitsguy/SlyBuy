@@ -11,3 +11,149 @@
  *= require_self
  *= require_tree .
  */
+html,body{
+		background-color:#63D1F4;
+		font-family: 'Raleway', sans-serif;
+	 margin:0;
+}
+form.pretty_form {
+		display:block;
+		margin-right:auto;
+		margin-left:auto;
+}
+form.pretty_form ul {
+		list-style:none;
+		margin-left:0px;
+		padding-left:0px;
+}
+form.pretty_form li {
+		margin-top:1.5em;
+}
+form.pretty_form input[type=text] {
+		border:0;
+		font-size:1.3em;
+		height:25px;
+		margin-top:10px;
+		padding:5px;
+		width:300px;
+}
+form.pretty_form button.submit {
+		background-color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius:6px;
+  border:none;
+  color: #333;
+  text-decoration: none;
+		padding:10px;
+}
+form.pretty_form button.submit:hover {
+		background-color:#eee;
+		cursor:pointer;
+}
+img.large {
+		display:block;
+		max-width:800px;
+		margin-right:auto;
+		margin-left:auto;
+		margin-top:10%;
+		width:70%;
+}
+.content {
+		margin-left:50px;
+}
+.content form.pretty_form input[type=text] {
+		margin-left:0;
+}
+.button-holder {
+		display:block;
+		margin-right:auto;
+		margin-left:auto;
+		width:40%;
+}
+.text-holder {
+		color:#ffffff;
+		display:block;
+		font-size:1.5em;
+		margin-right:auto;
+		margin-left:auto;
+		text-align:center;
+		width:40%;
+}
+.long {
+		text-align:left;
+		margin-left:30px;
+		width:100%;
+}
+.button{
+	border-radius:12px;
+	-webkit-border-radius:12px;
+	-moz-border-radius:12px;
+	border:3px white dotted;
+	color:#fff;
+	display:inline-block;
+	float:left;
+	font-size:1.5em;
+	font-weight:bold;
+	font-style:normal;
+	height:86px;
+	line-height:86px;
+	margin:10px;
+	text-align:center;
+	text-indent:0;
+	width:40%;
+	/*text-shadow:1px 2px 2px #0a010a;*/
+}
+.button:hover {
+		background-color:white;
+		color:#333;
+}	
+button.submit.venmo {
+		background-color:#00B2EE;
+		font-size:1.5em;
+}
+.logo {
+		margin:30px;
+}
+.logo img {
+		width:40%;
+}
+a.home_button {
+		border:none;
+		bottom:5px;
+		clear:both;
+		color:white;
+		display:block;
+		font-size:1.5em;
+		height:40px;
+		margin-left:40px;
+		padding:2px;
+		position:absolute;
+		text-decoration:none;
+		width:100px;
+}
+a.home_button:hover {
+		text-decoration:underline;
+}
+#home{
+		background:#00C78C;
+}
+
+#friends{
+	background: #63D1F4;
+}
+
+#charity{
+		background: #95a2a5; 
+}
+#footer {
+		clear:both;
+		color:#333;
+		display:block;
+		text-align:center;
+		margin-top:40%;
+		width:100%;
+}
+
+
+	

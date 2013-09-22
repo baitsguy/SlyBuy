@@ -10,7 +10,7 @@ class IndexController < ApplicationController
 				low_price = @price-10+@price*0.1
 				
 				begin
-						Timeout::timeout(10) {
+						Timeout::timeout(30) {
 						begin
 								page = 'http://www.reddit.com/'
 						
@@ -87,7 +87,7 @@ class IndexController < ApplicationController
 								:merchant => 'amazon', 
 								:shipping_method => 'standard'
 						}
-						redirect_to "http://insertvenmovurlhere"
+						redirect_to "https://api.venmo.com/oauth/authorize?client_id=1396&scope=ACCESS_FRIENDS,ACCESS_PROFILE,MAKE_PAYMENTS"
 				end
 
 		end

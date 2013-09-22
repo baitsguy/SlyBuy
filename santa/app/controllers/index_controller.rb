@@ -40,55 +40,54 @@ class IndexController < ApplicationController
 				rescue Exception => e
 						@query += e.inspect + @failed.to_s
 				end
-				if !@failed
-						session[:asin] = @item
-				end
-
+						session["asin"] = nil
+						session["asin"] = @item
 		end
 		
 		def confirmation
 				Zinc.api_key = "dev-fb112aad06264b67a535823768971a22" # set the API key first
 				if(params[:access_token]) #redirected from venmo
-						new_order = Zinc::Order.create(session[:zinc_input])
+						zinc_input = JSON.parse(session["zinc_input"])
+						#raise session.inspect + session["asin"] + session["zinc_input"].inspect + session["name"].inspect #+ zinc_input
+						#raise session[:zinc_input].inspect
+						new_order = Zinc::Order.create(zinc_input)
 						@order_id = new_order[:id]
 						@date = new_order[:delivery_date_estimate]
 						@status = new_order.status["message"]
 						@ASIN = new_order.products.first["pid"]
 						o = Order.new(:order_id => new_order[:id], :asin => new_order.products.first["pid"], :date => new_order[:created_date])
 						if User.find_by email: session[:email]
-								o.User = User.find_by email: session[:email]
+								o.User = User.find_by email: zinc_input[:email]
 						else
-							u = User.new(:email => session[:email])
+							u = User.new(:email => zinc_input[:email])
 							u.save
 							o.User = u
 						end
-
 						o.save
-
 				else
-						session[:email] = params[:email]
-						session[:zinc_input] = {
+						zinc_input = {
 								:mode => 'dev', 
 								:address => {
-										:name => params[:name],
-										:address_line1 => params[:address],
-										:zip_code => params[:zip],
-										:city => params[:city],
-										:state => params[:state],
+										:name => params["name"],
+										:address_line1 => params["address1"],
+										:zip_code => params["zip"],
+										:city => params["city"],
+										:state => params["state"],
 										:country => "US"
 								},
 								:products => [
 								{
-				        :pid => params[:pid],
+				        :pid => session["asin"],
 				        :pid_type => "ASIN",
 				    }
 								],
 								:merchant => 'amazon', 
 								:shipping_method => 'standard'
 						}
+						session["zinc_input"] = zinc_input.to_json.to_s
+						session["name"] = params["name"]
 						redirect_to "https://api.venmo.com/oauth/authorize?client_id=1396&scope=ACCESS_FRIENDS,ACCESS_PROFILE,MAKE_PAYMENTS"
 				end
 
-				raise session[:zinc_input]
 		end
 end

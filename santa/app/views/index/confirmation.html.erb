@@ -1,4 +1,10 @@
-Yay you bought stuffs!<br/>
-<b>Order ID</b> <%= @order_id %><br/>
-<b>Date</b> <%= @date %><br/>
-<b>Status</b> <%= @status %><br/>
+<% if @error.nil? %>
+		Yay good job on your order, you did great!<br/>
+		<b>Order ID</b> <%= @order_id %><br/>
+		<b>Date</b> <%= @date %><br/>
+		<b>Status</b> <%= @status %><br/>
+		<% else %>
+				<p>
+				<b><%= @error %></b>
+				</p>
+		<% end %>

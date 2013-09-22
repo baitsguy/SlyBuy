@@ -7,14 +7,7 @@
 		<p>Please fill out your shipping information below and choose your payment option. </p>
 		<p>p.s. Santa Claus says thanks for giving him a day off.</p>
 		<br/>
-		<br/>
-		<%= @query %><br/><br/>
-		<b><%= @name %><br/></b>
-		<%= @item %><br/>
-		<%= @cost %><br/>
-		<img src="<%= @image %>"/>
 				<br/>
-				<a href="/confirmation">Buy dis shizzzzzz</a><br/>
 				<ul style ="list-style-type: none;">
 						<%= form_tag('/confirmation', method: :get, :class => 'pretty_form') %>
 

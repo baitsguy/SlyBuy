@@ -55,7 +55,19 @@ class IndexController < ApplicationController
 						@date = new_order[:delivery_date_estimate]
 						@status = new_order.status["message"]
 						@ASIN = new_order.products.first["pid"]
+						o = Order.new(:order_id => new_order[:id], :asin => new_order.products.first["pid"], :date => new_order[:created_date])
+						if User.find_by email: session[:email]
+								o.User = User.find_by email: session[:email]
+						else
+							u = User.new(:email => session[:email])
+							u.save
+							o.User = u
+						end
+
+						o.save
+
 				else
+						session[:email] = params[:email]
 						session[:zinc_input] = {
 								:mode => 'dev', 
 								:address => {

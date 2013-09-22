@@ -11,24 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921082007) do
+ActiveRecord::Schema.define(version: 20130921214020) do
 
   create_table "orders", force: true do |t|
     t.integer  "order_id"
     t.string   "asin"
-    t.date     "date"
-    t.integer  "user_id"
+    t.integer  "date"
+    t.integer  "User_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+  add_index "orders", ["User_id"], name: "index_orders_on_User_id"
+  add_index "orders", ["order_id"], name: "index_orders_on_order_id"
 
   create_table "users", force: true do |t|
-    t.integer  "user_id"
-    t.string   "email"
+    t.string   "email",      limit: 40
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email"
 
 end
